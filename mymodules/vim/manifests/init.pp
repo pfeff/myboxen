@@ -5,6 +5,7 @@ class vim {
   $vimrc = "/home/${id}/.vimrc"
   $vim = "/home/${id}/.vim"
   $pathogen = "${vim}/autoload/pathogen.vim"
+  $bundle = "${vim}/bundle"
 
   package {"vim":
     ensure => present,
@@ -28,6 +29,12 @@ class vim {
     ensure => present,
     provider => git,
     source => "https://github.com/tpope/vim-surround.git",
+  }
+
+  vcsrepo {"${bundle}/puppet":
+    ensure => present,
+    provider => git,
+    source => "git://github.com/rodjek/vim-puppet.git"
   }
 
 }
