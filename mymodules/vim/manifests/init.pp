@@ -37,4 +37,10 @@ class vim {
     source => "git://github.com/rodjek/vim-puppet.git"
   }
 
+  vcsrepo {"${bundle}/ctrlp.vim":
+    ensure => present,
+    provider => git,
+    source => "https://github.com/kien/ctrlp.vim.git"
+  }
+
 }
