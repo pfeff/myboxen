@@ -43,4 +43,10 @@ class vim {
     source => "https://github.com/kien/ctrlp.vim.git"
   }
 
+  vcsrepo {"${bundle}/TVO--The-Vim-Outliner":
+    ensure => present,
+    provider => git,
+    source => "git://github.com/vim-scripts/TVO--The-Vim-Outliner.git"
+  }
+
 }
