@@ -4,5 +4,12 @@ class users::matt {
   }
 
   $home = "/home/matt"
+
+  class {'dotfiles':
+    home => $home
+  }
+  class {'vim':
+    home => $home
+  }
 }
 

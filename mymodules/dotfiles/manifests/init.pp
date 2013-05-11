@@ -1,11 +1,11 @@
-class dotfiles {
+class dotfiles($home) {
   
-  $dotfiles = "/home/${id}/src/pfeff/dotfiles"
+  $dotfiles = "${home}/src/pfeff/dotfiles"
 
   vcsrepo {"${dotfiles}":
     ensure => present,
     provider => git,
-    source => "git@github.com:pfeff/dotfiles.git"
+    source => "git://github.com/pfeff/dotfiles.git"
   }
 
 }

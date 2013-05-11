@@ -1,9 +1,9 @@
-class vim {
+class vim($home) {
 
   include dotfiles
 
-  $vimrc = "/home/${id}/.vimrc"
-  $vim = "/home/${id}/.vim"
+  $vimrc = "${home}/.vimrc"
+  $vim = "${home}/.vim"
   $pathogen = "${vim}/autoload/pathogen.vim"
   $bundle = "${vim}/bundle"
 
@@ -25,7 +25,7 @@ class vim {
     require => File["${vim}/autoload"]
   }
 
-  vcsrepo {"/home/${id}/.vim/bundle/vim-surround":
+  vcsrepo {"${home}/.vim/bundle/vim-surround":
     ensure => present,
     provider => git,
     source => "https://github.com/tpope/vim-surround.git",
